@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dal
 {
-    public class UnitOfWork : IUnitOfWork
+    public class UnitOfWork
     {
         public ICategoryRepository CategoryRepository { get; }
 
@@ -19,12 +19,7 @@ namespace Dal
             this.CategoryRepository = categoryRepository;
             this.ProductRepository = productRepository;
             this.ctx = ctx;
-        }
-
-        public void Dispose()
-        {
-            this.ctx.Dispose();
-        }
+        }    
 
         public void Commit()
         {
