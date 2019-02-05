@@ -9,9 +9,7 @@ namespace Dal
     public class UnitOfWork
     {
         public ICategoryRepository CategoryRepository { get; }
-
         public IProductRepository ProductRepository { get; }
-
         private readonly NorthwindContext ctx;
 
         public UnitOfWork(ICategoryRepository categoryRepository, IProductRepository productRepository, NorthwindContext ctx)

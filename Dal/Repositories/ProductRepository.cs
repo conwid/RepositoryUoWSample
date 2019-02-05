@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dal
 {
-    
+
     public class ProductRepository : IProductRepository
     {
         private readonly NorthwindContext ctx;
@@ -15,11 +15,7 @@ namespace Dal
         {
             this.ctx = ctx;
         }
-        public int Add(Product p)
-        {
-            ctx.Products.Add(p);
-            return p.ProductID;
-        }
+        public void Add(Product p) => ctx.Products.Add(p);
 
         public void Delete(Product p)
         {
@@ -27,15 +23,9 @@ namespace Dal
             ctx.Products.Remove(prod);
         }
 
-        public Product Get(int productId)
-        {
-            return ctx.Products.Single(product => product.ProductID == productId);
-        }
+        public Product Get(int productId) => ctx.Products.Single(product => product.ProductID == productId);
 
-        public IQueryable<Product> List()
-        {
-            return ctx.Products;
-        }
+        public IQueryable<Product> List() => ctx.Products;        
 
         public void Update(Product p)
         {
@@ -44,7 +34,7 @@ namespace Dal
             {
                 ctx.Products.Attach(p);
             }
-            entry.State = System.Data.Entity.EntityState.Modified;           
+            entry.State = System.Data.Entity.EntityState.Modified;
         }
-    }    
+    }
 }

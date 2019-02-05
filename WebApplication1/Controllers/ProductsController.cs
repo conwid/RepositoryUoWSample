@@ -11,24 +11,16 @@ namespace WebApplication1.Controllers
     [RoutePrefix("api/Products")]
     public class ProductsController : ApiController
     {
-        private readonly IProductManager productManager;
-        public ProductsController(IProductManager productManager)
+        private readonly IProductService productService;
+        public ProductsController(IProductService productService)
         {
-            this.productManager = productManager;
+            this.productService = productService;
         }
 
-        [HttpGet]
-        [Route()]
-        public IHttpActionResult Get()
-        {
-            return Ok(productManager.GetAllProducts());
-        }
+        [HttpGet, Route()]
+        public IHttpActionResult Get() => Ok(productService.GetAllProducts());
 
-        [HttpGet]
-        [Route("{id}")]
-        public IHttpActionResult Get(int id)
-        {
-            return Ok(productManager.GetProductById(id));
-        }
+        [HttpGet, Route("{id}")]
+        public IHttpActionResult Get(int id) => Ok(productService.GetProductById(id));
     }
 }

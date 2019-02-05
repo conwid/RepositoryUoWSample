@@ -13,10 +13,11 @@ namespace Dal
         [Required]
         [StringLength( 40 )]
         public string ProductName { get; set; }
-        public int? CategoryID { get; set; }
 
-        [Column( TypeName = "money" )]
+        public int? CategoryID { get; set; }
+        
         public decimal? UnitPrice { get; set; }
+
         public bool Discontinued { get; set; }
 
         public virtual Category Category { get; set; }

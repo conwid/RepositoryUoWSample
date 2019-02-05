@@ -8,7 +8,7 @@ namespace Dal
 {
     public interface ICategoryRepository
     {
-        int Add(Category c);
+        void Add(Category c);
         IQueryable<Category> List();
         Category Get(int categoryId);
         void Update(Category c);

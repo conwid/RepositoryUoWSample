@@ -13,11 +13,7 @@ namespace Dal
         {
             this.ctx = ctx;
         }
-        public int Add(Category p)
-        {
-            ctx.Categories.Add(p);
-            return p.CategoryID;
-        }
+        public void Add(Category p) => ctx.Categories.Add(p);                    
 
         public void Delete(Category p)
         {
@@ -25,15 +21,9 @@ namespace Dal
             ctx.Categories.Remove(prod);
         }
 
-        public Category Get(int productId)
-        {
-            return ctx.Categories.Single(product => product.CategoryID == productId);
-        }
+        public Category Get(int productId) => ctx.Categories.Single(product => product.CategoryID == productId);        
 
-        public IQueryable<Category> List()
-        {
-            return ctx.Categories;
-        }
+        public IQueryable<Category> List() => ctx.Categories;        
 
         public void Update(Category p)
         {

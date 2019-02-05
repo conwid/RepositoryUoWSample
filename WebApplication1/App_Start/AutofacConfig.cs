@@ -15,7 +15,7 @@ namespace WebApplication1
             var config = GlobalConfiguration.Configuration;
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
-            builder.RegisterType<ProductManager>().As<IProductManager>();
+            builder.RegisterType<ProductService>().As<IProductService>();
             builder.RegisterType<ProductRepository>().As<IProductRepository>();
             builder.RegisterType<CategoryRepository>().As<ICategoryRepository>();
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>();

@@ -9,7 +9,7 @@ namespace Dal
 
     public interface IProductRepository
     {
-        int Add( Product p );
+        void Add( Product p );
         IQueryable<Product> List();
         Product Get( int productId );
         void Update( Product p );
