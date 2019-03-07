@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dal
 {
-    public class UnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         public ICategoryRepository CategoryRepository { get; }
         public IProductRepository ProductRepository { get; }
