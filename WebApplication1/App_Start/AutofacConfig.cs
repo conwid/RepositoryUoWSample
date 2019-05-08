@@ -20,7 +20,7 @@ namespace WebApplication1
             builder.RegisterType<CategoryRepository>().As<ICategoryRepository>();
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>();
             builder.RegisterType<NorthwindContext>().AsSelf().InstancePerRequest();
-            builder.RegisterType<Clock>().As<IClock>();
+            builder.RegisterType<Clock>().As<IClock>().SingleInstance();
 
 
             var container = builder.Build();
