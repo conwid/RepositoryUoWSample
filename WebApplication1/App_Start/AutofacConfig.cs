@@ -19,7 +19,7 @@ namespace WebApplication1
             builder.RegisterType<ProductRepository>().As<IProductRepository>();
             builder.RegisterType<CategoryRepository>().As<ICategoryRepository>();
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>();
-            builder.RegisterType<NorthwindContext>().AsSelf().InstancePerRequest();
+            builder.RegisterType<NorthwindContext>().AsSelf().InstancePerLifetimeScope();
             builder.RegisterType<Clock>().As<IClock>().SingleInstance();
 
 
